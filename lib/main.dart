@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:michel_money/models/transaction.dart';
 import 'package:michel_money/screens/home_screen.dart';
 import 'package:michel_money/splash_screen/splash_screen.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -9,7 +10,7 @@ import 'package:hive_flutter/adapters.dart';
 
 void main() async {
   await Hive.initFlutter();
-  await Hive.openBox('transactions');
+  await Hive.openBox<Transaction>('transactions');
   runApp(const MyApp());
 }
 
